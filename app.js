@@ -34,7 +34,7 @@ let pvr = [
         b: [8, 5],
         a: [],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/a1.jpg',
         background: 'image/a1.jpg',
     },
@@ -56,7 +56,7 @@ let pvr = [
         b: [8, 5, 12, 13, 14],
         a: [],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/j1.jpg',
         background: 'image/j3.jpg',
     },
@@ -78,7 +78,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/t1.jpg',
         background: 'image/t2.jpg',
     },
@@ -100,7 +100,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/l1.jpeg',
         background: 'image/l2.jpg',
     },
@@ -122,7 +122,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/jagun1.jpg',
         background: 'image/jagun3.jpg',
     },
@@ -144,7 +144,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/m2.jpg',
         background: 'image/m2.jpg',
     },
@@ -166,7 +166,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/s2.jpg',
         background: 'image/s2.jpg',
     },
@@ -188,7 +188,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/p1.jpg',
         background: 'image/p1.jpg',
     },
@@ -210,7 +210,7 @@ let pvr = [
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        date: 5,
+        date: 6,
         img: 'image/d2.jpg',
         background: 'image/d2.jpg',
     }
@@ -360,16 +360,28 @@ document.getElementById('book_ticket').addEventListener('click', () => {
         // console.log(getData);
 
 
+        // PREVENTS USERS FROM RE-BOOKING SEATS THAT HAVE BEING BOOKED
+        // IT FILTERS THE DATE AND MOVIE NAME TO THE addSeats function
         document.getElementById('chair').innerHTML = '';
         let data = getData.filter(obj => obj.date === main_date && obj.movie === url_segment[1]);
         addSeats(data);
 
-
+        // REMOVE SCREEN FROM THE TICKET SECTION
         document.getElementById('screen').style.display = 'none';
+
+        // REMOVE CHAIR FROM THE TICKET SECTION
         document.getElementById('chair').style.display = 'none';
+
+        // REMOVE DETAILS FROM THE TICKET SECTION
         document.getElementById('det').style.display = 'none';
+
+
         document.getElementById('book_ticket').style.display = 'none';
+
+        // DISPLAY THE BACK BUTTON
         document.getElementById('back_ticket').style.display = 'unset';
+
+        // TO DISPLAY THE TICKET
         document.getElementById('ticket').style.display = 'block';
 
 
@@ -426,13 +438,15 @@ document.getElementById('book_ticket').addEventListener('click', () => {
 
 
 document.getElementById('back_ticket').addEventListener('click', () => {
+
+    // TO DISPLAY THE SCREEN AFTER THE USER PRESSES THE BACK ARROW 
     document.getElementById('screen').style.display = 'inline-block';
+
     document.getElementById('chair').style.display = 'block';
     document.getElementById('det').style.display = 'flex';
     document.getElementById('book_ticket').style.display = 'unset';
     document.getElementById('back_ticket').style.display = 'none';
     document.getElementById('ticket').style.display = 'none';
 })
-
 
 
