@@ -387,7 +387,7 @@ document.getElementById('book_ticket').addEventListener('click', () => {
                         </div>
 
                         <svg id="${seat_sr}${seat_no}barcode"></svg>
-                        <h5>VEGUS CINEMA</h5>
+                        <h5>IMAX CINEMA</h5>
                     </div>
                     <div class="tic_details" style=" background: url(${data[0].background})no-repeat center -35px /cover">
                         <div class="type">4DX</div>
