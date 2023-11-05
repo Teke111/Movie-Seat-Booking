@@ -391,7 +391,7 @@ document.getElementById('book_ticket').addEventListener('click', () => {
                     </div>
                     <div class="tic_details" style=" background: url(${data[0].background})no-repeat center -35px /cover">
                         <div class="type">4DX</div>
-                        <h5 class="pvr"><span>Vegus</span> Cinema</h5>
+                        <h5 class="pvr"><span>Imax</span> Cinema</h5>
                         <h1>${url_segment[1]}</h1>
                         <div class="seat_det">
                             <div class="seat_cr">
